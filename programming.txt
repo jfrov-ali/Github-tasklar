@@ -1,0 +1,114 @@
+// Task 1
+string ad = "Ceyhun";
+string soyad = "Hacizada";
+int yas = 25;
+double boy = 1.74;
+bool telebe = true;
+string netice = $"Menim adim {ad + " " + soyad}dur, {yas} yasim var. Boyum {boy}";
+Console.WriteLine(netice);
+// Task 2 
+string name = "telefon";
+decimal qiymet = 900.90m;
+int say = 19;
+decimal umumiqiymet = qiymet * say;
+Console.WriteLine(umumiqiymet);
+// Task 3
+const double Pi = 3.14;
+int r = 5;
+double area = r * r * Pi;
+    Console.WriteLine($"Radius: {r}");
+Console.WriteLine($"Dairənin sahəsi: {area}");
+// Task 4
+
+decimal salary = 1200m;
+decimal bonus = 250m;
+decimal taxPercent = 10m;
+decimal maas = salary + bonus;
+decimal vergi = (maas * taxPercent) / 100m;
+decimal yekunmaas = maas - vergi;
+Console.WriteLine($"Əsas maaş: {salary} AZN");
+Console.WriteLine($"Bonus: {bonus} AZN");
+Console.WriteLine($"Bonuslu maaş: {maas} AZN");
+Console.WriteLine($"Vergi tutulması ({taxPercent}%): {vergi} AZN");
+Console.WriteLine($"Ələ dəyən yekun maaş: {yekunmaas} AZN");
+// Task 5
+?
+// Task 6
+
+    int age = 20;
+const int minimumAge = 18;
+bool boyukdur = age > minimumAge;
+bool beraberdir = age == minimumAge;
+bool boyukberaber = age >= minimumAge;
+bool beraberdeyil = age != minimumAge;
+Console.WriteLine($"Yaş {minimumAge}-dən böyükdür: {boyukdur}");
+Console.WriteLine($"Yaş {minimumAge}-ə bərabərdir: {beraberdir}");
+Console.WriteLine($"Yaş {minimumAge}-dən böyük və ya bərabərdir: {boyukberaber}");
+Console.WriteLine($"Yaş {minimumAge} deyil: {beraberdeyil}");
+// Task 7
+
+string firstName = "Ceyhun";
+string lastName = "Hajizada";
+string fullName = $"{firstName}{lastName}";
+string boyukherflerle = fullName.ToUpper();
+string kicikherflerle = fullName.ToLower();
+int simvolsayi = fullName.Length;
+char ilkherf = fullName[0];
+char sonherf = fullName [fullName.Length - 1];
+Console.WriteLine($"Full Name: {fullName}");
+Console.WriteLine($"Böyük hərflərlə: {boyukherflerle}");
+Console.WriteLine($"Kiçik hərflərlə: {kicikherflerle}");
+Console.WriteLine($"Simvol sayı: {simvolsayi}");
+Console.WriteLine($"İlk simvol: {ilkherf}");
+Console.WriteLine($"Son simvol: {sonherf}");
+// Task 8
+
+string email = "jeyhun.hajizada@gmail.com";
+int simvolsayi = email.Length;
+int yeri = email.IndexOf("@");
+bool endsWithGmail = email.EndsWith("gmail.com");
+bool startsWithJeyhun = email.StartsWith("jeyhun");
+Console.WriteLine($"Email simvol sayı: {simvolsayi}");
+Console.WriteLine($"'@' simvolunun indeksi: {yeri}");
+Console.WriteLine($"'gmail.com' ilə bitir?: {endsWithGmail}");
+Console.WriteLine($"'jeyhun' ilə başlayır?: {startsWithJeyhun}");
+// Task 9
+string product = "keyboard";
+decimal price = 120m;
+int quantity = 3;
+decimal discount = 15m;
+decimal subtotal = price * quantity;
+decimal discountaze = (subtotal * discount) / 100m;
+decimal total = subtotal - discount;
+Console.WriteLine($"Product: {product}");
+Console.WriteLine($"Price: {price} AZN");
+Console.WriteLine($"Quantity: {quantity}");
+Console.WriteLine($"Subtotal: {subtotal} AZN");
+Console.WriteLine($"Discount: {discountaze} AZN");
+Console.WriteLine($"Total: {total} AZN");
+// Task 10 
+
+    string firstName = "Jeyhun";
+string lastName = "Hajizada";
+int birthYear = 2004;
+string email = "jeyhun.hajizada@gmail.com";
+double height = 1.83;
+bool isStudent = true;
+const  int currentyear = 2026;
+string fullName = $" {firstName} {lastName}";
+int indikiyas = currentyear - birthYear;
+char ilkherf = firstName[0];
+char soyadinsonherf = lastName[lastName.Length - 1];
+int emailLength = email.Length;
+bool simvol = email.Contains("@");
+bool boyukdurmu = indikiyas > 18;
+Console.WriteLine($"Full Name: {fullName}");
+Console.WriteLine($"Yaş: {indikiyas}");
+Console.WriteLine($"Adın ilk hərfi: {ilkherf}");
+Console.WriteLine($"Soyadın son hərfi: {soyadinsonherf}");
+Console.WriteLine($"Email uzunluğu: {emailLength}");
+Console.WriteLine($"Email-də @ var?: {simvol}");
+Console.WriteLine($"18 yaşdan böyükdür?: {boyukdurmu}");
+
+// Task 11
+?
