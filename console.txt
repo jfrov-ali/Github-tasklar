@@ -1,0 +1,67 @@
+Task 1
+Console.Write("Adınızı daxil edin: ");
+string ad = Console.ReadLine();
+Console.Write("Doğulduğunuz ili daxil edin: ");
+int dogumili = int.Parse(Console.ReadLine()); // int tipinə çevirmə
+Console.Write("Cari ili daxil edin: ");
+int cariIl = int.Parse(Console.ReadLine());
+int yas = cariIl - dogumili;
+int onIlSonraYas = yas + 10;
+string status = (yas >= 18) ? "Yetkin" : "Yetkin deyil"; //geminiden yazdim bu setri
+Console.WriteLine($"Salam, {ad}");
+Console.WriteLine($"Sənin yaşın: {yas}");
+Console.WriteLine($"10 il sonra yaşın: {onIlSonraYas}");
+Console.WriteLine($"Yetkinlik statusu: {status}");
+Task 2 
+Console.Write("Mehsulun adını daxil edin: ");
+string mehsuladi = Console.ReadLine();
+Console.Write("Qiymeti daxil edin: ");
+double qiymet = double.Parse(Console.ReadLine());
+Console.Write("Neçə eded alınıb?: ");
+int say = int.Parse(Console.ReadLine());
+double umumiqiymet = qiymet * say;
+const double DiscountRate = 0.10;
+if (umumiqiymet >= 100) ;
+double endirim = umumiqiymet * DiscountRate;
+double sonqiymet = umumiqiymet - endirim;
+
+Console.WriteLine($"Məhsul: {mehsuladi}");
+Console.WriteLine($"Say: {say}");
+Console.WriteLine($"Endirimsiz qiymət: {umumiqiymet} AZN");
+Console.WriteLine($"Endirim: {endirim} AZN");
+Console.WriteLine($"Ödəniləcək məbləğ: {sonqiymet} AZN");
+Task 3 
+Console.Write("Adinizi daxil edin: ");
+string ad = Console.ReadLine();
+Console.Write("Soyadinizi daxil edin: ");
+string soyad = Console.ReadLine();
+ ad = ad.Trim().ToLower();
+ soyad = soyad.Trim().ToLower(); 
+string adHissesi = ad.Substring(0, Math.Min(3, ad.Length));
+string soyadHissesi = soyad.Substring(0, Math.Min(3, soyad.Length)); // 5,6,7 ve 8 ci setri geminiden yazdim
+int soyadUzunlugu = soyad.Length;
+string istifadeciadi = $"{adHissesi}{soyadHissesi}{soyadUzunlugu}";
+
+Console.WriteLine($"Yaradılan istifadəçi adı: {istifadeciadi}");
+Task 4
+?
+Task 5 
+Console.Write("Adinizi daxil edin: ");
+string ad = Console.ReadLine();
+Console.Write("Mesafeni qeyd edin: ");
+double mesafe = double.Parse(Console.ReadLine());
+Console.Write("Gecedir? (beli/xeyr): ");
+string gecedirmi = Console.ReadLine();
+Console.Write("Promo kodu daxil edin: ");
+string promoKod = Console.ReadLine();
+const double baslangicqiymet = 2.0;
+const double kilometrqiymeti = 0.70;
+const double geceelavesifaiz = 0.20;
+const double promoendirimfaiz = 0.10;
+const string dogrupromokod = "0.10";
+double qiymet = baslangicqiymet + (mesafe * kilometrqiymeti);
+
+Console.WriteLine($"Müştəri: {ad}");
+Console.WriteLine($"Gediləcək məsafə: {mesafe} km");
+Console.WriteLine($"Yekun qiymət: {qiymet} AZN");
+   
