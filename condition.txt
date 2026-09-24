@@ -1,0 +1,209 @@
+Task 1
+Console.Write("Yasinizi daxil edin : ");
+int age = int.Parse(Console.ReadLine());
+Console.Write("Emekhaqqinizi daxil edin : ");
+double emekhaqqi = double.Parse(Console.ReadLine());
+Console.Write("Is tecrubenizi daxil edin (ay ile) : ");
+int istecrubesi = int.Parse(Console.ReadLine());
+Console.Write("Movcud kredit borcunuzu daxil edin : ");
+double currentborc = double.Parse(Console.ReadLine());
+Console.Write("Gecikmis odenisiniz varmi? (He/Yox) : ");
+string delayedodenis = Console.ReadLine();
+bool xetavar = false;
+if (delayedodenis == "He") {
+    xetavar = true;
+}
+else if (delayedodenis == "Yox")
+{
+    xetavar = false;
+}
+else { 
+Console.WriteLine ("Daxil etdiyiniz melumat tapilmadi");
+
+}
+if (age < 21 || age > 65) {
+    Console.WriteLine("Teessufki size kredit verilmir : ");
+xetavar= false;
+}
+if (emekhaqqi < 800)
+{
+    Console.WriteLine("Teessufki size kredit verilmir : ");
+    xetavar = false;
+}
+if (istecrubesi < 6)
+{
+    Console.WriteLine("Teessufki size kredit verilmir : ");
+    xetavar = false;
+}
+if (delayedodenis == "Yox")
+{
+    Console.WriteLine("Teessufki size kredit verilmir : ");
+    xetavar = false;
+}
+double kreditborcu = (emekhaqqi * 40) / 100;
+if (currentborc < kreditborcu) {
+    Console.WriteLine("Teessufki size kredit verilmir : ");
+    xetavar = false;
+}
+Task 2
+Console.Write("Gedilən məsafəni daxil edin : ");
+double mesafe = double.Parse(Console.ReadLine());
+Console.Write("Gediş saatını daxil edin (0-23): ");
+int saat = int.Parse(Console.ReadLine());
+Console.Write("Müştərinin premium olub-olmaması daxil edin (He/Yox) : ");
+string premium = Console.ReadLine();
+bool xetavar = false;
+if (premium == "He")
+{
+    xetavar = true;
+}
+else if (premium == "Yox")
+{
+    xetavar = false;
+}
+else
+{
+    Console.WriteLine("Daxil etdiyiniz melumat tapilmadi");
+}
+Console.Write("Hava şəraitini daxil edin (Normal, Rain, Snow) : ");
+string havaseraiti = Console.ReadLine();
+double baslanqicqiymet = 1.50;
+double kmqiymeti = 0.70;
+double qiymet = baslanqicqiymet + (mesafe * kmqiymeti);
+if (saat > 22 || saat < 6)
+{
+    qiymet += qiymet * 0.20;
+}
+switch (havaseraiti)
+{
+    case "rain":
+        qiymet += qiymet * 0.10;
+        break;
+    case "snow":
+        qiymet += qiymet * 0.25;
+        break;
+    case "normal":
+    default:
+        Console.WriteLine("Normal havalar qiymet deyisikliyi yoxdur");
+        break;
+}
+if (premium == "He")
+{
+    qiymet -= qiymet * 0.15;
+    if (qiymet < 2.50)
+    {
+        qiymet = 2.50;
+    } // 45-48 ci setirler geminidden goturulub ve kodu run edende qiymet hesablamir!
+}
+Task 3
+?
+Task 4
+Console.Write("İmtahan balıni daxil edin : ");
+int bal = int.Parse(Console.ReadLine());
+Console.Write("Davamiyyət faizini daxil edin : ");
+double davamiyyet = double.Parse(Console.ReadLine());
+Console.Write("Layihəni təqdim etmisiz? (beli/xeyr): ");
+string layihe = Console.ReadLine();
+bool xetavar = false;
+if (layihe == "beli")
+{
+    xetavar = true;
+}
+if (layihe == "xeyr")
+{
+    xetavar = false;
+}
+
+Console.Write("İmtahanda qayda pozuntusun olub? (beli/xeyr) : ");
+string qaydapozuntusu = Console.ReadLine();
+bool problemvar = false;
+if (qaydapozuntusu == "beli")
+{
+    problemvar = true;
+}
+if (qaydapozuntusu == "xeyr")
+{
+    problemvar = false;
+}
+if (bal > 100 || bal < 0)
+{
+    xetavar = false;
+    Console.WriteLine("Teessufki daxil etdiyiniz bal kecerli deyil (yalniz 0-100 arasi)");
+}
+if (qaydapozuntusu == "beli")
+{
+    problemvar = false;
+    Console.WriteLine("Tessufki imtahandan kesilmisiniz");
+}
+if (davamiyyet < 70)
+{
+    Console.WriteLine("Tessufki imtahandan kesilmisiniz");
+
+}
+if (layihe == "xeyr")
+{
+    Console.WriteLine("Imtahandan C qiymeti almisiz");
+}
+switch (bal)
+{
+    case >= 91:
+        Console.WriteLine("A");
+        break;
+    case >= 81:
+        Console.WriteLine("B");
+        break;
+    case >= 71:
+        Console.WriteLine("C");
+        break;
+    case >= 61:
+        Console.WriteLine("D");
+        break;
+    default:
+        Console.WriteLine("F");
+        ;
+        break;
+}
+Task 5
+Console.Write("Kartın PIN kodunu daxil edin : ");
+string pin = Console.ReadLine();
+if (pin != "2026")
+{
+    Console.WriteLine("Kartinizin pin kodu sehvdir,zehmet olmasa yeniden cehd edin");
+}
+Console.Write("Hesabdakı balansi daxil edin : ");
+decimal balans = decimal.Parse(Console.ReadLine());
+Console.Write("Çıxarılacaq məbləği daxil edin : ");
+decimal mebleg = decimal.Parse(Console.ReadLine());
+if (mebleg > balans)
+{
+    Console.WriteLine("Mebleginiz balansdan artiq ola bilmez!!");
+}
+if (mebleg > 1000)
+{
+    Console.WriteLine(" Bir emeliyyatda maksimum 1000 AZN çıxarıla biler.");
+}
+Console.Write("Kartiniz bloklanib? (he/yox) : ");
+string bloklanibmi = Console.ReadLine();
+bool xetavar = false;
+if (bloklanibmi == "he")
+{
+    xetavar = true;
+    Console.WriteLine("Kartiniz bloklanib :");
+}
+if (bloklanibmi == "yox")
+{
+    xetavar = false;
+}
+
+if (balans - mebleg < 5)
+{
+    Console.WriteLine("Emeliyyatdan sonra balans minimum 5 AZN qalmalıdır");
+}
+
+balans -= mebleg;
+Console.WriteLine("emeliyyat ugurla icra olundu");
+if (mebleg > 500)
+{
+    Console.WriteLine(" Hesabınızdan 500 AZN-dən yuxarı məbləğdə nağd pul çıxarıldı.");
+}
+
