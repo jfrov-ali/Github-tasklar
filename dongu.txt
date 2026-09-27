@@ -1,0 +1,63 @@
+Task 1
+Console.Write("Ededi daxil edin :");
+int eded = int.Parse(Console.ReadLine());
+int cutSay = 0;
+int tekSay = 0;
+int cutCem = 0;
+for (int i = 1; i <= eded; i++)
+{
+    if (i % 2 == 0)
+    {
+        cutSay++;     
+        cutCem += i;  
+    }
+    else
+    {
+        tekSay++;    
+    }
+}
+Console.WriteLine($"Cut ededlerin sayi :{cutSay}");
+Console.WriteLine($"Tek ededlerin sayi :{tekSay}");
+Console.WriteLine($"Cut ededlerin cemi :{cutCem}");
+Task 2
+Console.Write("Ededi daxil edin :");
+int eded = int.Parse(Console.ReadLine());
+for (int i = 0; i < 10; i++)
+{
+    int hasil = eded * i;
+    Console.WriteLine($"{eded} x {i} = {hasil}");
+}
+Task 3
+    {
+        string pin = "2026";
+        int cehd = 3;
+        bool girisugurludur = false;
+
+        while (cehd > 0)
+        {
+            Console.Write("PIN daxil edin: ");
+            string daxilEdilenPin = Console.ReadLine();
+
+            if (daxilEdilenPin == pin)
+            {
+                Console.WriteLine("Giriş uğurludur.");
+                girisugurludur = true;
+                break; //gemini
+            }
+            else
+            {
+                cehd--; // gemini
+
+                if (cehd > 0)
+                {
+                    Console.WriteLine($"Yanlış PIN. {cehd} cəhdiniz qaldı.");
+                }
+            }
+        }
+
+        if (!girisugurludur)
+        {
+            Console.WriteLine("Kart bloklandı!");
+        }
+    }
+Task 4
