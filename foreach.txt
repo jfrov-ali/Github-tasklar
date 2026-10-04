@@ -1,0 +1,175 @@
+Task 1 
+Console.Write("Kredit mebleginizi qeyd edin : ");
+double kredit = double.Parse(Console.ReadLine());
+Console.Write("Nece aya goturmusuz? : ");
+int ay = int.Parse(Console.ReadLine());
+if (ay <= 0)
+{
+Console.WriteLine("Ay sayı 0 və ya menfi ola bilmez!");
+}
+
+if (kredit <= 0)
+{
+Console.WriteLine("Kredit mebleği 0-dan böyük olmalıdır!");
+
+}
+double ayliqodenis = kredit / ay;
+double qalanborc = kredit;
+for (int i = 1; i <= ay; i++)
+{
+qalanborc -= ayliqodenis; 
+
+if (ay == ay)
+{
+qalanborc = 0;
+}
+
+Console.WriteLine($"{ay}-ci ay ödəniş: {ayliqodenis} AZN");
+Console.WriteLine($"Qalan borc: {qalanborc} AZN");
+}
+Task 2
+const int max = 60;
+int bak = 10;
+while (bak < max)
+{
+    Console.WriteLine($"Bakinizda {bak} litr benzin var");
+    Console.Write("Ne qeder elave edek? :");
+    int elavebenzin = int.Parse ( Console.ReadLine() );
+    if ( elavebenzin < 0 )
+    {
+        Console.WriteLine("Zehmet olmasa musbet eded daxil edin");
+    }
+    int bosyer = max - bak;
+    if (elavebenzin > bosyer)
+    {
+        Console.WriteLine("Bu qeder yanacaq elave etmek mumkun deyil");
+        Console.WriteLine($"Bakda yalnız {bosyer} litr boş yer var.");
+    }
+    else
+    {
+        bak += elavebenzin;
+        Console.WriteLine();
+    }
+}
+Console.WriteLine($"Hazırda: {bak} litr");
+Console.WriteLine("Bak tam doludur.");
+Task 3
+double balans = 20;
+int secim;
+
+do
+{
+    Console.WriteLine("1 - Balansa bax");
+    Console.WriteLine("2 - Balans artır");
+    Console.WriteLine("3 - İnternet paketi al - 5 AZN");
+    Console.WriteLine("4 - Danışıq paketi al - 3 AZN");
+    Console.WriteLine("0 - Çıxış");
+    secim = int.Parse(Console.ReadLine());
+    switch (secim)
+    {
+        case 1:
+            Console.WriteLine($"Balansiniz : {balans}");
+            break;
+        case 2:
+            Console.WriteLine("Artiracaginiz balansi qeyd edin : ");
+            int artirilacaqmebleg = int.Parse(Console.ReadLine());
+            balans += artirilacaqmebleg;
+            break;
+        case 3:
+            if (balans >= 5)
+            {
+                balans -= 5;
+                Console.WriteLine($"Qalan balansiniz : {balans}");
+            }
+            else
+            {
+                Console.WriteLine("Balansinizda kifayet qeder mebleg yoxdur");
+            }
+            break;
+        case 4:
+            if (balans >= 3)
+            {
+                balans -= 3;
+                Console.WriteLine($"Qalan balansiniz : {balans}");
+            }
+            else
+            {
+                Console.WriteLine("Blansinizda kifayet qeder mebleg yoxdur");
+            }
+            break;
+        case 0:
+            Console.WriteLine("Menyudan cixildi");
+            break;
+
+    }
+
+}
+while (secim != 0);
+Task 4 
+using System.ComponentModel.Design;
+
+const int maxmertebe = 10;
+const int minmertebe = 1;
+int cariLiftinDayandigiMertebe = 1;
+while (true)
+{
+    Console.WriteLine($"Hal- hazirda {cariLiftinDayandigiMertebe} ci mertebedesiz");
+    Console.Write("Gedeceyiniz mertebeni daxil edin : ");
+    int mertebe = int.Parse(Console.ReadLine());
+    if (mertebe == 0)
+    {
+        break;
+    }
+    if (mertebe < minmertebe || mertebe > maxmertebe)
+    {
+        Console.WriteLine("Bele mertebe yoxdu");
+        continue;
+    }
+    if (mertebe == cariLiftinDayandigiMertebe)
+    {
+        Console.WriteLine("Eyni mertebedesiniz");
+
+    }
+    else if (mertebe > cariLiftinDayandigiMertebe)
+    {
+        for (int floor = cariLiftinDayandigiMertebe + 1; floor <= mertebe;floor++)
+        {
+            Console.WriteLine($"{floor}- ci mertebe");
+        }
+        cariLiftinDayandigiMertebe = mertebe;
+        Console.WriteLine("Catdiniz");
+    }
+    else if (mertebe < cariLiftinDayandigiMertebe)
+    {
+        for (int floor = cariLiftinDayandigiMertebe - 1; floor >= mertebe; floor--)
+        {
+            Console.WriteLine($"{floor}- ci mertebe");
+        }
+        cariLiftinDayandigiMertebe = mertebe;
+        Console.WriteLine("Catdiniz");
+    }
+}
+Task 5 
+Console.Write("Şifrə daxil edin: ");
+string sifre = Console.ReadLine();
+int boyukherfsayi = 0;
+int kicikherfsayi = 0;
+int reqemsayi = 0;
+foreach (char simvol in sifre)
+{
+if (char.IsUpper(simvol))
+{
+boyukherfsayi++;
+}
+else if (char.IsLower(simvol))
+{
+kicikherfsayi++;
+}
+else if (char.IsDigit(simvol))
+{
+reqemsayi++;
+}
+}
+Console.WriteLine($"Böyük hərf sayı: {boyukherfsayi}");
+Console.WriteLine($"Kiçik hərf sayı: {kicikherfsayi}");
+Console.WriteLine($"Rəqəm sayı: {reqemsayi}");
