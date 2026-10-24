@@ -1,0 +1,58 @@
+Task 1
+Dictionary<string, int> telebeler = new()
+{
+    ["Yusif"] = 20,
+    ["Maqa"] = 23,
+    ["Kamal"] = 25
+};
+Console.WriteLine("İlkin Siyahı:");
+foreach (KeyValuePair<string, int> item in telebeler)
+{
+    Console.WriteLine($"Telebe: {item.Key}, balı: {item.Value}");
+}
+
+telebeler["Murad"] = 90;
+Console.WriteLine(" Deyisiklikdenden sonra:");
+foreach (var item in telebeler)
+{
+    Console.WriteLine($"Telebe: {item.Key}, balı: {item.Value}");
+}
+Task 2
+Console.Write("Adi daxil edin : ");
+string ad = Console.ReadLine();
+Dictionary<string, int> telebeler = new()
+{
+    ["Aysel"] = 23,
+    ["Maqa"] = 25,
+    ["Kamal"] = 27,
+    ["Muhammed"] = 28
+};
+bool tapildimi = false;
+foreach(KeyValuePair<string,int> telebe in telebeler)
+{
+    if (telebe.Key == ad)
+    {
+        Console.WriteLine($"Ad tapildi, daxil etdiyiniz ad {ad} adli telebenin bali: {telebe.Value}");
+        tapildimi = true;
+        break;
+    }
+}
+if ( ! tapildimi)
+{
+    Console.WriteLine("Ad tapilmadi");
+}
+Task 3
+int[] ededler = { 2,2,2,34,5,6,7,8,9,5 };
+Dictionary<string, int> counts = new();
+
+foreach (int eded in ededler)
+{
+    if (counts.ContainsKey(eded))
+        counts[eded]++;
+    else
+        counts[eded] = 1;
+}
+
+foreach (var item in counts)
+    Console.WriteLine($"{item.Key}: {item.Value}");
+Task 4
